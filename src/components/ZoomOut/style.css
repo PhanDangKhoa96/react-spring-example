@@ -1,0 +1,31 @@
+.letter-b-clip {
+    clip-path: url(#letterB);
+}
+
+.letter-r-clip {
+    clip-path: url(#letterR);
+}
+
+.letter-a-clip {
+    clip-path: url(#letterA);
+}
+
+.letter-n-clip {
+    clip-path: url(#letterN);
+}
+
+.letter-d-clip {
+    clip-path: url(#letterD);
+}
+
+.letter-i-clip {
+    clip-path: url(#letterI);
+}
+
+.letter-g-clip {
+    clip-path: url(#letterG);
+}
+
+/* .other-letters {
+    scale: 0.3;
+} */
