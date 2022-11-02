@@ -9,35 +9,14 @@ const Blob = () => {
 
     const [toggle, setToggle] = useState(false)
 
-    // const blobAnimation = useSpring({
-    //     from: { x: blob[0] },
-    //     to: { x: blob[1] },
-    //     config: {
-    //         duration: 3000
-    //     },
-    // })
-
     const blobAnimation = useSpring({
-        x: toggle ? blob[0] : blob[1],
+        from: { x: blob[0] },
+        to: { x: blob[1] },
         config: {
             duration: 3000
-        }
+        },
+        loop: { reverse: true }
     })
-
-    // useEffect(() => {
-    //     const interval = () => {
-    //         setInterval(() => {
-    //             setToggle(!toggle)
-    //             console.log(toggle);
-    //         }, 3000);
-    //     }
-    //     interval()
-    //     return () => {
-    //         clearInterval(interval)
-    //     }
-    // }, [toggle])
-
-
 
     return (
         <div className='min-h-screen relative grid place-items-center'>
