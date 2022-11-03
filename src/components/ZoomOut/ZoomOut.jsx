@@ -1,16 +1,10 @@
-import React, { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
+import { ExpoScaleEase } from 'gsap/EasePack'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import LetterB from './LetterB'
+import React, { useEffect, useRef } from 'react'
 import ClipPath from './ClipPath'
+import LetterB from './LetterB'
 import './style.css'
-import LetterR from './LetterR'
-import LetterA from './LetterA'
-import LetterN from './LetterN'
-import LetterD from './LetterD'
-import LetterI from './LetterI'
-import LetterG from './LetterG'
-import { useWindowScroll } from 'react-use'
 
 const ZoomOut = () => {
     gsap.registerPlugin(ScrollTrigger)
@@ -20,16 +14,16 @@ const ZoomOut = () => {
         const element = ref.current
         const eyeSmall = element.querySelectorAll('.eye-small')
         const eyeImage = element.querySelectorAll('.eye-image')
-        // const letter = element.querySelectorAll('.letter')
-        // console.dir(element.querySelectorAll('.eye-small').length);
 
         gsap.fromTo(
             element.querySelector('.curtain'),
             {
-                scale: 5
+                scale: 8,
+                ease: ExpoScaleEase.config(8, 1),
             },
             {
                 scale: 1,
+
                 scrollTrigger: {
                     trigger: element.querySelector('.wrap-pice'),
                     start: '0px',
@@ -38,9 +32,6 @@ const ZoomOut = () => {
                 }
             }
         )
-
-
-
 
         gsap.fromTo(
             element.querySelector('.letter-b'),
@@ -118,10 +109,13 @@ const ZoomOut = () => {
         gsap.fromTo(
             element.querySelector('.letter-b-wrapper'),
             {
+                left: "50%",
+                x: "-50%"
             },
             {
 
-                left: '-150px',
+                left: 'calc(50% - 800px)',
+                x: "-100px",
                 scrollTrigger: {
                     trigger: element.querySelector('.wrap-pice'),
                     start: '1300px',
@@ -155,13 +149,13 @@ const ZoomOut = () => {
 
             <div className='w-full h-screen grid place-items-center fixed inset-0 overflow-hidden bg-[#f8f8f8]' ref={ref}>
                 <div className='absolute wrap-pice -top-1'></div>
-                <div className='absolute letter-b-wrapper'>
+                <div className='absolute letter-b-wrapper z-10'>
                     <LetterB />
                 </div>
 
 
-                <div className='absolute left-[289px] flex other-letters opacity-0'>
-                    <img src="/randing.png" alt="" className='h-[210px]' />
+                <div className='absolute left-1/2 translate-x-[calc(-50%+215px)] flex other-letters opacity-0 w-max'>
+                    <img src="/randing.png" alt="" className='h-[210px] aspect-[1887/293]' />
                     {/* <LetterR />
                     <LetterA />
                     <LetterN />
