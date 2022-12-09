@@ -1,5 +1,6 @@
 import './App.scss'
 import Blob from './components/Blob'
+import Carousel from './components/Carousel/react-spring-carousel';
 import Logo from './components/Logo';
 import Modal from './components/Modal';
 import PositionExample from './components/PositionExample';
@@ -19,7 +20,8 @@ function App() {
 
       {/* <PositionExample /> */}
 
-      <ZoomOut />
+      {/* <ZoomOut /> */}
+      <Carousel />
     </main>
   )
 }
