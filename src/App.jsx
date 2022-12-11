@@ -23,6 +23,7 @@ function App() {
 
       {/* <ZoomOut /> */}
       <Carousel />
+
       {/* <FullPage /> */}
     </main>
   )
