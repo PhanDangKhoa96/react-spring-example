@@ -1,6 +1,7 @@
 import './App.scss'
 import Blob from './components/Blob'
 import Carousel from './components/Carousel/react-spring-carousel';
+import FullPage from './components/FullPage/FullPage';
 import Logo from './components/Logo';
 import Modal from './components/Modal';
 import PositionExample from './components/PositionExample';
@@ -22,6 +23,7 @@ function App() {
 
       {/* <ZoomOut /> */}
       <Carousel />
+      {/* <FullPage /> */}
     </main>
   )
 }
